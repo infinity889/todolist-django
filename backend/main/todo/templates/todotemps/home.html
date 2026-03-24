@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Мои задачи</h1>
+        
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Добавить задачу</button>
+            </form>
+        </div>
+        
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li class="task-item">
+                <span class="task-title">{{ task.title }}</span>
+                <div class="task-actions">
+                    <a href="{% url 'update' task.id %}" class="btn-edit">Изменить</a>
+                    <a href="{% url 'delete' task.id %}" class="btn-delete">Удалить</a>
+                </div>
+            </li>
+            {% empty %}
+            <li class="empty-message">Задач пока нет</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

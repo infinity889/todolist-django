@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button,
+.btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.task-item:hover {
+    background-color: #f9f9f9;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-title {
+    flex: 1;
+    color: #333;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions a {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.btn-edit {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+.confirmation-message {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-cancel {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #d0d0d0;
+}
+
+/* Django form styling */
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+}
+
+.helptext {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.errorlist {
+    color: #f44336;
+    list-style: none;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
